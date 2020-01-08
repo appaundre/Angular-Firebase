@@ -1,0 +1,38 @@
+<div class="row justify-content-center col-sm-12 mt-5">
+    <div class="col-sm-7">
+        <div class="card ">
+            <div class="card-header">Users List </div>
+            <div class="card-body">
+                <div class="row col-sm-12 justify-content-end form-group">
+                    <button type="button" class="btn btn-primary" (click)="backToRegistration()"> Registration </button>
+                </div>
+                <div class="col-sm-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email Id</th>
+                                <th scope="col">Mobile No</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users">
+                                <th scope="row">{{user.name}}</th>
+                                <td>{{user.email}}</td>
+                                <td>{{user.mobileNo}}</td>
+                                <td>{{user.address}}</td>
+                                <td> <a (click)="editDetails(user)"> edit</a></td>
+                                <td> <a (click)="deleteUser(user)"> delete</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
